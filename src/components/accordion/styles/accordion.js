@@ -6,7 +6,8 @@ export const Container = styled.section`
 `;
 
 export const Frame = styled.div`
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.625rem;
+  max-width: 1200px;
 `;
 
 export const Inner = styled.div`
@@ -40,6 +41,7 @@ export const Title = styled.h1`
 `;
 
 export const Header = styled.div`
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -50,6 +52,16 @@ export const Header = styled.div`
   padding: 0.8em 1.2em;
   user-select: none;
   align-items: center;
+  width: 100%;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 1.5rem;
+
+    @media (max-width: 600px) {
+      width: 1rem;
+    }
+  }
 
   @media (max-width: 600px) {
     font-size: 1rem;
@@ -57,7 +69,8 @@ export const Header = styled.div`
 `;
 
 export const Body = styled.div`
-  max-width: 1200px;
+  box-sizing: border-box;
+  width: 100%;
   transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   font-size: 1.625rem;
   font-weight: normal;

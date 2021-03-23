@@ -17,6 +17,6 @@ OptForm.Button = function OptFormButton({ children, ...restProps }) {
   );
 };
 
-OptForm.Text = function OptFormText({ childen, ...restProps }) {
-  return <Text {...restProps}>{childen}</Text>;
+OptForm.Text = function OptFormText({ children, ...restProps }) {
+  return <Text {...restProps}>{children}</Text>;
 };

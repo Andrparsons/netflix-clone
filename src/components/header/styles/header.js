@@ -4,13 +4,67 @@ import { Link as ReachRouterLink } from "react-router-dom";
 export const Background = styled.section`
   display: flex;
   flex-direction: column;
+  background: url(${({ src }) =>
+      src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
+    top left / cover no-repeat;
+
+  @media (max-width: 1100px) {
+    ${({ dontShowOnSmallViewPort }) =>
+      dontShowOnSmallViewPort && `background:none;`}
+  }
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  margin: 0 3.5rem;
+  height: 4rem;
+  padding: 1.125rem 0;
+  justify-content: space-between;
+  align-items: center;
 
-export const Link = styled.p``;
+  a {
+    display: flex;
+  }
 
-export const ButtonLink = styled(ReachRouterLink)``;
+  @media (max-width: 1000px) {
+    margin: 0 1.875rem;
+  }
+`;
+
+export const Link = styled.p`
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 1.875rem;
+  font-weight: ${({ active }) => (active === "true" ? "700" : "normal")};
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+export const ButtonLink = styled(ReachRouterLink)`
+  display: block;
+  background-color: #e50914;
+  width: 5.25rem;
+  height: fit-content;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.1875rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  line-height: 1.3;
+
+  &:hover {
+    background: #f40612;
+  }
+`;
 
 export const Logo = styled.img`
   height: 2rem;

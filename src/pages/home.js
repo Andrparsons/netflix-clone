@@ -10,18 +10,18 @@ export default function Home() {
   return (
     <>
       <HeaderContainer>
-        <OptForm>
-          <Feature>
-            <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
-            <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>
+        <Feature>
+          <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
+          <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>
+          <OptForm>
             <OptForm.Text>
               Ready to watch? Enter your email to create or restart your
               membership.
             </OptForm.Text>
             <OptForm.Input placeholder="Email Address" />
             <OptForm.Button>Try it now</OptForm.Button>
-          </Feature>
-        </OptForm>
+          </OptForm>
+        </Feature>
       </HeaderContainer>
       <JumbotronContainer />
       <FaqsContainer />

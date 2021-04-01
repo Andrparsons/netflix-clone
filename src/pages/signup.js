@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { Form } from "../components";
-import { FooterContainer } from "../containers/footer";
 import { HeaderContainer } from "../containers/header";
+import { Form } from "../components";
+import * as ROUTES from "../constants/routes";
+import { FooterContainer } from "../containers/footer";
 
-export default function Signin() {
+export default function Signup() {
+  const [firstName, setFirstName] = useState("");
   const [error, setError] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
 
-  const isInvalid = (password === "") | (emailAddress === "");
+  const isInvalid =
+    (password === "") | (emailAddress === "") | (firstName === "");
 
-  const handleSignin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
   };
 
@@ -18,10 +21,16 @@ export default function Signin() {
     <>
       <HeaderContainer>
         <Form>
-          <Form.Title>Sign In</Form.Title>
+          <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
 
-          <Form.Base onSubmit={handleSignin} method="POST">
+          <Form.Base onSubmit={handleSignup} method="POST">
+            <Form.Input
+              type="text"
+              placeholder="First Name"
+              value={firstName}
+              onChange={({ target }) => setFirstName(target.value)}
+            />
             <Form.Input
               type="email"
               placeholder="Email Address"
@@ -36,11 +45,11 @@ export default function Signin() {
               autocomplete="off"
             />
             <Form.Submit type="submit" disabled={isInvalid}>
-              Sign In
+              Sign Up
             </Form.Submit>
 
             <Form.Text>
-              New to Netflix? <Form.Link to="/signup">Sign up now.</Form.Link>{" "}
+              Already a user? <Form.Link to="/signin">Sign in.</Form.Link>
             </Form.Text>
 
             <Form.TextSmall>

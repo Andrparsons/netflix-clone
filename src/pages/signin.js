@@ -7,6 +7,8 @@ export default function Signin() {
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
 
+  const isInvalid = (password === "") | (emailAddress === "");
+
   const handleSignin = (e) => {
     e.preventDefault();
   };
@@ -31,7 +33,7 @@ export default function Signin() {
             onChange={({ target }) => setPassword(target.value)}
             autocomplete="off"
           />
-          <Form.Submit type="submit" disabled={false}>
+          <Form.Submit type="submit" disabled={isInvalid}>
             Sign In
           </Form.Submit>
 

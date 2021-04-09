@@ -15,7 +15,7 @@ export const Container = styled.section`
   margin-bottom: 6.25rem;
 `;
 
-export const Base = styled.div`
+export const Base = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 450px;

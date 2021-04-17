@@ -19,7 +19,7 @@ export function SelectProfileContainer({ user, setProfile }) {
         <Profiles.List>
           {/* TODO: when more users in place map over the list  */}
           <Profiles.User
-            onclick={() =>
+            onClick={() =>
               setProfile({
                 displayName: user.displayName,
                 photoURL: user.photoURL,

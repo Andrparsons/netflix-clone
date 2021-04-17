@@ -9,6 +9,7 @@ import { FirebaseContext } from "../context/firebase";
 export default function Signup() {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
+
   const [firstName, setFirstName] = useState("");
   const [error, setError] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
@@ -19,7 +20,6 @@ export default function Signup() {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log("button pressed");
 
     firebase
       .auth()

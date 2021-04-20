@@ -88,3 +88,43 @@ export const Text = styled.p`
   line-height: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 `;
+
+export const Feature = styled(Container)`
+  flex-direction: column;
+  align-items: normal;
+  width: 50%;
+  padding: 9.375rem 0 31.25rem 0;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`;
+
+export const FeatureCallOut = styled.h2`
+  color: #ffffff;
+  font-size: 3.125rem;
+  line-height: normal;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin: 0;
+`;
+
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  background-color: #e6e6e6;
+  color: #000000;
+  padding: 0.625rem 1.25rem;
+  border-radius: 5px;
+  border-width: 0;
+  max-width: 130px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 0.625rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background-color: #ff1e1e;
+    color: #ffffff;
+  }
+`;

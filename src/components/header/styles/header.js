@@ -161,3 +161,64 @@ export const SearchInput = styled.input`
   opacity: ${({ active }) => (active === true ? "1" : "0")};
   width: ${({ active }) => (active === true ? "12.5rem" : "0rem")};
 `;
+
+export const Picture = styled.button`
+  background: url(${({ src }) => src});
+  background-size: contain;
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+`;
+
+export const Dropdown = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  padding: 0.625rem;
+  width: 6.25rem;
+  top: 2rem;
+  right: 0.625rem;
+
+  ${Group}:last-of-type ${Link} {
+    cursor: pointer;
+  }
+
+  ${Group} {
+    margin-bottom: 0.625rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    ${Link}, ${Picture} {
+      cursor: default;
+    }
+  }
+
+  button {
+    margin-right: 0.625rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+`;
+
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 1.25rem;
+  position: relative;
+
+  button {
+    cursor: pointer;
+  }
+
+  &:hover > ${Dropdown} {
+    display: flex;
+    flex-direction: column;
+  }
+`;

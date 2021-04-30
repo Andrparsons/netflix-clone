@@ -8,7 +8,6 @@ import { FirebaseContext } from "./context/firebase";
 const config = {
   apiKey: "AIzaSyDH7hj5RDWgwlDmZI7adi77PgD9VnyezoM",
   authDomain: "netflix-clone-29c32.firebaseapp.com",
-  dataBaseURL: "https://netflix-clone-29c32-default-rtdb.firebaseio.com/",
   projectId: "netflix-clone-29c32",
   storageBucket: "netflix-clone-29c32.appspot.com",
   messagingSenderId: "107946305205",

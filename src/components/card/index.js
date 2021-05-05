@@ -8,8 +8,9 @@ import {
   Feature,
   FeatureTitle,
   FeatureClose,
+  FeatureText,
   Maturity,
-  Context,
+  Content,
   Meta,
   Entities,
   Item,
@@ -95,10 +96,10 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
           <Maturity rating={itemFeature.maturity}>
             {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
           </Maturity>
-          <FeaureText fontWeight="bold">
+          <FeatureText fontWeight="bold">
             {itemFeature.genre.charAt(0).toUpperCase() +
               itemFeature.genre.slice(1)}
-          </FeaureText>
+          </FeatureText>
         </Group>
         {children}
       </Content>

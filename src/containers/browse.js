@@ -7,7 +7,7 @@ import { FooterContainer } from "./footer";
 
 export function BrowseContainer({ slides }) {
   const [profile, setProfile] = useState({});
-  const [category, setCategory] = useState("shows");
+  const [category, setCategory] = useState("series");
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [slideRows, setSlideRows] = useState([]);
@@ -41,14 +41,14 @@ export function BrowseContainer({ slides }) {
               alt="Netflix"
             />
             <Header.Link
-              active={category === "shows" ? "true" : "false"}
-              onClick={() => setCategory("shows")}
+              active={category === "series" ? "true" : "false"}
+              onClick={() => setCategory("series")}
             >
               TV Shows
             </Header.Link>
             <Header.Link
-              active={category === "movies" ? "true" : "false"}
-              onClick={() => setCategory("movies")}
+              active={category === "films" ? "true" : "false"}
+              onClick={() => setCategory("films")}
             >
               Movies
             </Header.Link>
@@ -104,6 +104,9 @@ export function BrowseContainer({ slides }) {
                 </Card.Item>
               ))}
             </Card.Entities>
+            <Card.Feature category={category}>
+              <p>Feature</p>
+            </Card.Feature>
           </Card>
         ))}
       </Card.Group>
